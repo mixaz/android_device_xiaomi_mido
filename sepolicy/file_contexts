@@ -22,3 +22,6 @@
 
 # Data files
 /data/misc/netmgr/log\.txt			u:object_r:netmgrd_data_file:s0
+
+# VNC server
+/system/bin/androidvncserver			u:object_r:vnc_exec:s0

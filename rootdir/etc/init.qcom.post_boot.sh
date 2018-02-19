@@ -2337,3 +2337,10 @@ case "$console_config" in
         echo "Enable console config to $console_config"
         ;;
 esac
+
+if [ -f /system/bin/androidvncserver ]; then
+    if [ ! -f /data/local/tmp/libdvnc_flinger_sdk.so ]; then
+      cp /system/lib/libdvnc_flinger_sdk.so /data/local/tmp/
+    fi
+    start vnc
+fi

@@ -267,3 +267,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/fstman.ini:system/etc/wifi/fstman.ini \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini
+
+# VNC
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/vnc/vnc.rc:system/etc/init/vnc.rc \
+    $(LOCAL_PATH)/vnc/bin/androidvncserver:system/bin/androidvncserver \
+    $(LOCAL_PATH)/vnc/lib/libdvnc_flinger_sdk.so:data/local/tmp/libdvnc_flinger_sdk.so \
+    $(LOCAL_PATH)/vnc/lib/libdvnc_gralloc_sdk25.so:system/lib/libdvnc_gralloc_sdk25.so
