@@ -273,5 +273,5 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vnc/vnc.rc:system/etc/init/vnc.rc \
     $(LOCAL_PATH)/vnc/bin/androidvncserver:system/bin/androidvncserver \
-    $(LOCAL_PATH)/vnc/lib/libdvnc_flinger_sdk.so:data/local/tmp/libdvnc_flinger_sdk.so \
+    $(LOCAL_PATH)/vnc/lib/libdvnc_flinger_sdk.so:system/lib/libdvnc_flinger_sdk.so \
     $(LOCAL_PATH)/vnc/lib/libdvnc_gralloc_sdk25.so:system/lib/libdvnc_gralloc_sdk25.so
