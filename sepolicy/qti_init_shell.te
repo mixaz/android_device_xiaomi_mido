@@ -8,3 +8,13 @@ allow qti_init_shell self:socket { create ioctl write };
 allow qti_init_shell sysfs:dir write;
 allow qti_init_shell vnc_exec:file getattr;
 
+# for iptables handling
+allow qti_init_shell self:rawip_socket create;
+allow qti_init_shell self:udp_socket create;
+allow qti_init_shell shell_data_file:dir { getattr search };
+allow qti_init_shell self:capability net_raw;
+allow qti_init_shell shell_data_file:dir write;
+allow qti_init_shell self:rawip_socket getopt;
+allow qti_init_shell shell_data_file:dir add_name;
+allow qti_init_shell self:rawip_socket setopt;
+allow qti_init_shell shell_data_file:file create;

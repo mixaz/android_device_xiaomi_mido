@@ -351,3 +351,12 @@ case "$buildvariant" in
         echo "4 4 1 4" > /proc/sys/kernel/printk
         ;;
 esac
+
+# block all outcomming traffic except a proxy
+iptables -P OUTPUT DROP
+iptables -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -A OUTPUT -p tcp -m tcp --dport 22225 -j ACCEPT
+iptables -A OUTPUT -d 192.168.1.1/32 -p tcp -m tcp --dport 53 -j ACCEPT
+iptables -A OUTPUT -d 192.168.1.1/32 -p udp -m udp --dport 53 -j ACCEPT
+iptables -A OUTPUT -d 127.0.0.1/32 -j ACCEPT
+iptables -A OUTPUT -d 0.0.0.0/32 -j ACCEPT
