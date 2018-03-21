@@ -18,3 +18,5 @@ allow qti_init_shell self:rawip_socket getopt;
 allow qti_init_shell shell_data_file:dir add_name;
 allow qti_init_shell self:rawip_socket setopt;
 allow qti_init_shell shell_data_file:file create;
+allow qti_init_shell shell_data_file:file { getattr read write };
+allow qti_init_shell shell_data_file:file open;

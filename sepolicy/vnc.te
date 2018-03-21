@@ -36,3 +36,4 @@ allow vnc uhid_device:chr_file { ioctl open write };
 allow vnc fwmarkd_socket:sock_file write;
 allow vnc netd:unix_stream_socket connectto;
 allow vnc self:tcp_socket { accept getattr getopt read shutdown write };
+allow vnc shell_data_file:dir search;
