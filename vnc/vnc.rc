@@ -2,4 +2,3 @@ service vnc /system/bin/androidvncserver -m flinger
         class main
         user root
         group root
-        oneshot
