@@ -361,6 +361,6 @@ esac
 #iptables -A OUTPUT -d 127.0.0.1/32 -j ACCEPT
 #iptables -A OUTPUT -d 0.0.0.0/32 -j ACCEPT
 
-#echo 0 > /proc/sys/net/ipv6/conf/wlan0/accept_ra
+echo 0 > /proc/sys/net/ipv6/conf/wlan0/accept_ra
 echo 0 > /proc/sys/net/ipv6/conf/default/accept_ra
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
