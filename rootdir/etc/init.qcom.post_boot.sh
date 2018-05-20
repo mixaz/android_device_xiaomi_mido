@@ -2338,9 +2338,31 @@ case "$console_config" in
         ;;
 esac
 
+# VNC
 if [ -f /system/bin/androidvncserver ]; then
     if [ ! -f /data/local/tmp/libdvnc_flinger_sdk.so ]; then
       cp /system/lib/libdvnc_flinger_sdk.so /data/local/tmp/
     fi
     start vnc
 fi
+
+# SSHD
+if [ -d /system/etc/sshd ]; then
+    if [ ! -f /data/ssh/authorized_keys ]; then
+      if [ ! -d /data/local/userinit.d ]; then
+        mkdir /data/local/userinit.d
+      fi
+      if [ ! -d /data/ssh ]; then
+        mkdir /data/ssh
+      fi
+      cp /system/etc/sshd/99sshd /data/local/userinit.d/99sshd
+      cp /system/etc/sshd/authorized_keys /data/ssh/authorized_keys
+      cp /system/etc/sshd/sshd_config /data/ssh/sshd_config
+      chmod 755 /data/local/userinit.d/99sshd
+      chmod 644 /data/ssh/authorized_keys
+      chown shell /data/ssh/authorized_keys
+      chmod 644 /data/ssh/sshd_config
+    fi
+    start sshd
+fi
+

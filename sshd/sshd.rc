@@ -1,0 +1,4 @@
+service sshd /data/local/userinit.d/99sshd
+        class main
+        user root
+        group root
