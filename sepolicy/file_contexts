@@ -24,9 +24,9 @@
 /data/misc/netmgr/log\.txt			u:object_r:netmgrd_data_file:s0
 
 # VNC server
-/system/bin/androidvncserver			u:object_r:vnc_exec:s0
+#/system/bin/androidvncserver			u:object_r:vnc_exec:s0
 
 # SSHD
-/usr/bin/sshd					u:object_r:sshd_exec:s0
-/data/local/userinit.d/99sshd			u:object_r:sshd_exec:s0
+#/usr/bin/sshd					u:object_r:sshd_exec:s0
+#/data/local/userinit.d/99sshd			u:object_r:sshd_exec:s0
 

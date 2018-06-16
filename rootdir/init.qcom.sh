@@ -352,15 +352,6 @@ case "$buildvariant" in
         ;;
 esac
 
-# block all outcomming traffic except a proxy
-#iptables -P OUTPUT DROP
-#iptables -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
-#iptables -A OUTPUT -p tcp -m tcp --dport 22225 -j ACCEPT
-#iptables -A OUTPUT -d 192.168.1.1/32 -p tcp -m tcp --dport 53 -j ACCEPT
-#iptables -A OUTPUT -d 192.168.1.1/32 -p udp -m udp --dport 53 -j ACCEPT
-#iptables -A OUTPUT -d 127.0.0.1/32 -j ACCEPT
-#iptables -A OUTPUT -d 0.0.0.0/32 -j ACCEPT
-
 echo 0 > /proc/sys/net/ipv6/conf/wlan0/accept_ra
 echo 0 > /proc/sys/net/ipv6/conf/default/accept_ra
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
